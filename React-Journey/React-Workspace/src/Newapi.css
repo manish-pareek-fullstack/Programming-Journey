@@ -1,0 +1,428 @@
+/* =============================================
+   NEWAPI.CSS — Full Stylesheet with Animations
+   ============================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f2f5;
+  color: #1a1a2e;
+}
+
+/* =============================================
+   MAIN WRAPPER
+   ============================================= */
+main {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  animation: fadeInPage 0.5s ease;
+}
+
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =============================================
+   SEARCH + SORT FORM
+   ============================================= */
+form {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #ffffff;
+  padding: 18px 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+form input[type="search"] {
+  flex: 1;
+  min-width: 220px;
+  padding: 11px 18px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #333;
+  background: #fafafa;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+form input[type="search"]:focus {
+  border-color: #6c63ff;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.15);
+}
+
+form select {
+  padding: 11px 16px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #333;
+  background: #fafafa;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23999' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+form select:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.15);
+}
+
+form button {
+  padding: 11px 24px;
+  background: linear-gradient(135deg, #6c63ff, #5a54d4);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.4px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+  white-space: nowrap;
+}
+
+form button:hover {
+  background: linear-gradient(135deg, #5a54d4, #4a44c4);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(108, 99, 255, 0.35);
+}
+
+form button:active {
+  transform: translateY(0px) scale(0.97);
+  box-shadow: none;
+}
+
+/* =============================================
+   CARDS GRID — 5 PER ROW
+   ============================================= */
+.container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 1400px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1100px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =============================================
+   CARD
+   ============================================= */
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: cardPop 0.4s ease both;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Staggered animation delay for cards */
+.card:nth-child(1)  { animation-delay: 0.05s; }
+.card:nth-child(2)  { animation-delay: 0.10s; }
+.card:nth-child(3)  { animation-delay: 0.15s; }
+.card:nth-child(4)  { animation-delay: 0.20s; }
+.card:nth-child(5)  { animation-delay: 0.25s; }
+.card:nth-child(6)  { animation-delay: 0.30s; }
+.card:nth-child(7)  { animation-delay: 0.35s; }
+.card:nth-child(8)  { animation-delay: 0.40s; }
+.card:nth-child(9)  { animation-delay: 0.45s; }
+.card:nth-child(10) { animation-delay: 0.50s; }
+
+@keyframes cardPop {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(108, 99, 255, 0.18);
+}
+
+/* =============================================
+   CARD IMAGE
+   ============================================= */
+.card-image {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background: #f5f5f5;
+  position: relative;
+}
+
+.card-image img,
+.card-image span img,
+.card-image .lazy-load-image-background {
+  width: 100% !important;
+  height: 180px !important;
+  object-fit: cover !important;
+  display: block !important;
+  transition: transform 0.45s ease;
+}
+
+.card:hover .card-image img,
+.card:hover .card-image span img {
+  transform: scale(1.07);
+}
+
+/* =============================================
+   CARD CONTENT
+   ============================================= */
+.card-content {
+  padding: 14px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+}
+
+.card-content p:first-child {
+  font-size: 11px;
+  color: #aaa;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.card-content h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a2e;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-content p {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-content p:last-of-type {
+  font-size: 15px;
+  font-weight: 700;
+  color: #6c63ff;
+  -webkit-line-clamp: unset;
+}
+
+/* View Detail Button */
+.card-content > button {
+  margin-top: auto;
+  padding: 9px 0;
+  background: linear-gradient(135deg, #6c63ff, #5a54d4);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+}
+
+.card-content > button:hover {
+  background: linear-gradient(135deg, #5a54d4, #4a44c4);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(108, 99, 255, 0.35);
+}
+
+.card-content > button:active {
+  transform: scale(0.97);
+}
+
+/* =============================================
+   EXTRA DETAIL SECTION
+   ============================================= */
+.extra-detail {
+  margin-top: 10px;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  animation: expandDetail 0.35s ease;
+}
+
+@keyframes expandDetail {
+  from {
+    opacity: 0;
+    transform: scaleY(0.9);
+    transform-origin: top;
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+.extra-detail p {
+  font-size: 12px;
+  color: #444;
+  line-height: 1.5;
+  -webkit-line-clamp: unset;
+  display: block;
+}
+
+.extra-detail strong {
+  color: #1a1a2e;
+  font-weight: 700;
+}
+
+.extra-detail span {
+  font-size: 11.5px;
+  background: #f0eeff;
+  color: #6c63ff;
+  padding: 2px 8px;
+  border-radius: 20px;
+  margin: 2px 2px 0 0;
+  display: inline-block;
+  font-weight: 600;
+}
+
+/* Reviews inside extra detail */
+.extra-detail > div > div {
+  background: #f8f8ff;
+  border-left: 3px solid #6c63ff;
+  padding: 8px 10px;
+  border-radius: 0 8px 8px 0;
+  margin: 4px 0;
+}
+
+.extra-detail > div > div p {
+  font-size: 11.5px;
+  color: #555;
+}
+
+/* Back Button */
+.extra-detail > button {
+  margin-top: 10px;
+  padding: 9px 0;
+  background: transparent;
+  color: #6c63ff;
+  border: 1.5px solid #6c63ff;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+  width: 100%;
+}
+
+.extra-detail > button:hover {
+  background: #6c63ff;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.extra-detail > button:active {
+  transform: scale(0.97);
+}
+
+/* Meta section */
+.extra-detail h5 {
+  font-size: 12px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Dimensions */
+.extra-detail div div p {
+  margin: 0;
+}
+
+/* =============================================
+   SCROLLBAR STYLING
+   ============================================= */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f2f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c0b8ff;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6c63ff;
+}

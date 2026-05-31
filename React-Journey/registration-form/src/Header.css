@@ -1,0 +1,152 @@
+/* Reset */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Navbar Container */
+
+.navbar{
+
+display:flex;
+justify-content:center;
+align-items:center;
+gap:40px;
+
+background:white;
+padding:20px;
+
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
+
+position:sticky;
+top:0;
+z-index:100;
+
+animation:navbarFade 0.8s ease;
+
+}
+
+/* Navbar Animation */
+
+@keyframes navbarFade{
+
+from{
+opacity:0;
+transform:translateY(-20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* Links */
+
+.navbar a{
+
+text-decoration:none;
+color:#333;
+font-size:18px;
+font-weight:600;
+
+padding:10px 18px;
+border-radius:8px;
+
+position:relative;
+
+transition:all 0.3s ease;
+
+}
+
+/* Hover Animation */
+
+.navbar a:hover{
+
+color:white;
+background:#2563eb;
+
+transform:translateY(-2px);
+
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+
+}
+
+/* Underline Animation */
+
+.navbar a::after{
+
+content:"";
+position:absolute;
+
+width:0%;
+height:2px;
+
+left:0;
+bottom:-4px;
+
+background:#2563eb;
+
+transition:0.4s;
+
+}
+
+.navbar a:hover::after{
+width:100%;
+}
+
+/* Active Click */
+
+.navbar a:active{
+transform:scale(0.95);
+}
+
+/* Tablet Responsive */
+
+@media (max-width:900px){
+
+.navbar{
+gap:20px;
+}
+
+.navbar a{
+font-size:16px;
+padding:8px 14px;
+}
+
+}
+
+/* Mobile Responsive */
+
+@media (max-width:600px){
+
+.navbar{
+
+flex-direction:column;
+gap:15px;
+
+padding:15px;
+
+}
+
+.navbar a{
+
+width:100%;
+text-align:center;
+
+background:#f1f5f9;
+
+}
+
+.navbar a:hover{
+
+background:#2563eb;
+color:white;
+
+}
+
+}

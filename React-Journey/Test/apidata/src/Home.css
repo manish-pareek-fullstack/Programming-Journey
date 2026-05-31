@@ -1,0 +1,514 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Sora', sans-serif;
+  background: #f5f4f0;
+  color: #1a1a1a;
+  min-height: 100vh;
+}
+
+/* ─── PAGE WRAPPER ─── */
+.home-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+/* ─── FORM SECTION ─── */
+.form-section {
+  background: #ffffff;
+  border: 0.5px solid #d3d1c7;
+  border-radius: 16px;
+  padding: 2rem 2rem 1.75rem;
+  margin-bottom: 3rem;
+}
+
+.form-section h2 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #888780;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  margin-bottom: 1.25rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-group label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #888780;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.input-group input {
+  width: 100%;
+  height: 42px;
+  padding: 0 14px;
+  font-family: 'Sora', sans-serif;
+  font-size: 14px;
+  color: #1a1a1a;
+  background: #f5f4f0;
+  border: 1px solid #d3d1c7;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.18s, background 0.18s, box-shadow 0.18s;
+}
+
+.input-group input::placeholder {
+  color: #b4b2a9;
+  font-size: 13px;
+}
+
+.input-group input:hover {
+  border-color: #7F77DD;
+  background: #fff;
+}
+
+.input-group input:focus {
+  border-color: #7F77DD;
+  background: #fff;
+  box-shadow: 0 0 0 3px #EEEDFE;
+}
+
+.submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 28px;
+  height: 42px;
+  background: #534AB7;
+  color: #fff;
+  font-family: 'Sora', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.18s, transform 0.12s;
+}
+
+.submit-btn:hover {
+  background: #3C3489;
+}
+
+.submit-btn:active {
+  transform: scale(0.97);
+}
+
+/* ─── SECTION TITLE ─── */
+.section-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #888780;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+/* ─── PRODUCT GRID ─── */
+.products-section {
+  margin-bottom: 3rem;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* ─── PRODUCT CARD ─── */
+.product-card {
+  background: #ffffff;
+  border: 0.5px solid #d3d1c7;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color 0.18s;
+}
+
+.product-card:hover {
+  border-color: #AFA9EC;
+}
+
+.product-card__thumb {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  background: #f5f4f0;
+}
+
+.product-card__body {
+  padding: 1.25rem 1.25rem 1rem;
+}
+
+.product-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.product-card__id {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: #888780;
+  background: #f5f4f0;
+  border: 0.5px solid #d3d1c7;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.product-card__category {
+  font-size: 11px;
+  font-weight: 500;
+  color: #534AB7;
+  background: #EEEDFE;
+  padding: 3px 10px;
+  border-radius: 6px;
+}
+
+.product-card__title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.product-card__desc {
+  font-size: 13px;
+  color: #888780;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.product-card__price-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.product-card__price {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 18px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.product-card__discount {
+  font-size: 12px;
+  font-weight: 500;
+  color: #0F6E56;
+  background: #E1F5EE;
+  padding: 3px 10px;
+  border-radius: 6px;
+}
+
+/* ─── INFO ROWS ─── */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 14px;
+  margin-bottom: 14px;
+  border-top: 0.5px solid #f5f4f0;
+  padding-top: 14px;
+}
+
+.info-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.info-row__label {
+  font-size: 10px;
+  font-weight: 500;
+  color: #b4b2a9;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.info-row__value {
+  font-size: 13px;
+  color: #444441;
+}
+
+/* ─── DIMENSIONS ─── */
+.dimensions-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.dim-box {
+  flex: 1;
+  background: #f5f4f0;
+  border-radius: 8px;
+  padding: 8px 10px;
+  text-align: center;
+}
+
+.dim-box__label {
+  font-size: 10px;
+  color: #b4b2a9;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.dim-box__value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: #444441;
+  font-weight: 500;
+}
+
+/* ─── TAGS ─── */
+.tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.tag {
+  font-size: 11px;
+  color: #185FA5;
+  background: #E6F1FB;
+  padding: 3px 10px;
+  border-radius: 6px;
+}
+
+/* ─── STATUS BADGES ─── */
+.status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.badge {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 6px;
+}
+
+.badge--available {
+  color: #0F6E56;
+  background: #E1F5EE;
+}
+
+.badge--warranty {
+  color: #634206;
+  background: #FAEEDA;
+}
+
+.badge--shipping {
+  color: #185FA5;
+  background: #E6F1FB;
+}
+
+/* ─── REVIEWS ─── */
+.reviews-section {
+  border-top: 0.5px solid #f5f4f0;
+  padding-top: 14px;
+  margin-bottom: 14px;
+}
+
+.reviews-title {
+  font-size: 11px;
+  font-weight: 500;
+  color: #888780;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.review-item {
+  background: #f5f4f0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}
+
+.review-item:last-child {
+  margin-bottom: 0;
+}
+
+.review-item__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.review-item__name {
+  font-size: 13px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.review-item__rating {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: #BA7517;
+  background: #FAEEDA;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.review-item__comment {
+  font-size: 13px;
+  color: #444441;
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+
+.review-item__meta {
+  font-size: 11px;
+  color: #b4b2a9;
+}
+
+/* ─── META / QR ─── */
+.meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 0.5px solid #f5f4f0;
+  padding-top: 14px;
+}
+
+.meta-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.meta-text {
+  font-size: 11px;
+  color: #b4b2a9;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.qr-img {
+  width: 72px;
+  height: 72px;
+  border-radius: 8px;
+  border: 0.5px solid #d3d1c7;
+}
+
+/* ─── SUBMITTED DATA ─── */
+.submitted-section {
+  margin-top: 1rem;
+}
+
+.submitted-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.submitted-card {
+  background: #ffffff;
+  border: 0.5px solid #AFA9EC;
+  border-radius: 14px;
+  padding: 1.25rem;
+  border-left: 3px solid #534AB7;
+}
+
+.submitted-card__id {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: #534AB7;
+  margin-bottom: 8px;
+}
+
+.submitted-card__title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 6px;
+}
+
+.submitted-card__desc {
+  font-size: 13px;
+  color: #888780;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.submitted-card__category {
+  font-size: 11px;
+  color: #534AB7;
+  background: #EEEDFE;
+  padding: 3px 10px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.submitted-card__price-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.submitted-card__price {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.submitted-card__discount {
+  font-size: 12px;
+  color: #0F6E56;
+  background: #E1F5EE;
+  padding: 2px 10px;
+  border-radius: 6px;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 600px) {
+  .home-wrapper {
+    padding: 1.5rem 1rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .submitted-grid {
+    grid-template-columns: 1fr;
+  }
+}

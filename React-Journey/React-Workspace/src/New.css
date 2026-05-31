@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f1f3f6;
+  color: #212121;
+}
+
+/* ── GRID CONTAINER ── */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+  padding: 32px 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ── CARD ── */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  overflow: hidden;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 28px rgba(40, 116, 240, 0.13);
+}
+
+.card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ── ID / TITLE / DESC ── */
+.card-id {
+  font-size: 11px;
+  font-weight: 600;
+  color: #9e9e9e;
+  background: #f5f5f5;
+  border-radius: 20px;
+  padding: 2px 10px;
+  width: fit-content;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a2e;
+  line-height: 1.4;
+}
+
+.card-desc {
+  font-size: 13px;
+  color: #616161;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── PRICE / DISCOUNT / RATING ROW ── */
+.card-top-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 10px 0;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.card-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #212121;
+}
+
+.card-discount {
+  font-size: 12px;
+  font-weight: 600;
+  color: #388e3c;
+  background: #e8f5e9;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.card-rating {
+  font-size: 12px;
+  font-weight: 600;
+  color: #f57c00;
+  background: #fff8e1;
+  padding: 2px 8px;
+  border-radius: 6px;
+  margin-left: auto;
+}
+
+/* ── TAGS ── */
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.tag-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #9e9e9e;
+  text-transform: uppercase;
+}
+
+.tag {
+  font-size: 11px;
+  background: #f3f4f6;
+  color: #555;
+  border: 1px solid #e0e0e0;
+  padding: 2px 9px;
+  border-radius: 20px;
+}
+
+/* ── META GRID (stock, brand, category …) ── */
+.card-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  background: #fafafa;
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.card-meta-grid span {
+  font-size: 12px;
+  color: #424242;
+}
+
+/* ── DIMENSIONS ── */
+.card-dimensions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.card-dimensions p {
+  font-size: 12px;
+  color: #555;
+  background: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  padding: 4px 12px;
+  border-radius: 6px;
+}
+
+/* ── SHIPPING / WARRANTY ── */
+.card-shipping {
+  background: #f9fbe7;
+  border: 1px solid #dcedc8;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card-shipping p {
+  font-size: 12px;
+  color: #33691e;
+}
+
+/* ── REVIEWS ── */
+.card-reviews h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 10px;
+}
+
+.review {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  transition: border-color 0.2s;
+}
+
+.review:hover {
+  border-color: #2874f0;
+}
+
+.review p {
+  font-size: 12px;
+  color: #616161;
+}
+
+/* ── POLICY ── */
+.card-policy {
+  background: #fce4ec;
+  border: 1px solid #f8bbd0;
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+
+.card-policy p {
+  font-size: 12px;
+  color: #880e4f;
+}
+
+/* ── QR / META ── */
+.card-qr h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 8px;
+}
+
+.card-qr p {
+  font-size: 12px;
+  color: #616161;
+  margin-bottom: 4px;
+}
+
+.card-qr img {
+  margin-top: 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+}
+
+/* ── PRODUCT IMAGES ── */
+.card-images {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 6px 0 10px;
+  scrollbar-width: thin;
+  scrollbar-color: #e0e0e0 transparent;
+}
+
+.card-images img {
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  object-fit: contain;
+  background: #fafafa;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.card-images img:hover {
+  transform: scale(1.06);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    padding: 16px 12px;
+  }
+
+  .card-meta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-top-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card-rating {
+    margin-left: 0;
+  }
+}
