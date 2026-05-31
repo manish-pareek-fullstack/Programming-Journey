@@ -1,6 +1,4 @@
 # Programming-Journey
-Programming practice, projects, and learning journey.
-# Programming-Journey
 
 This repository contains my programming learning journey, including:
 
