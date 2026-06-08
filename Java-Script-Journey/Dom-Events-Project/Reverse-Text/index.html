@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Reverse Text App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-slate-900 h-screen flex items-center justify-center">
+    <div
+      class="bg-slate-800 shadow-2xl rounded-2xl p-10 text-center w-[350px] border border-slate-700"
+    >
+      <h1 class="text-3xl font-bold text-indigo-400 mb-6">Reverse Text</h1>
+
+      <input
+        id="btn1"
+        type="text"
+        placeholder="Type something..."
+        class="w-full p-3 rounded-lg bg-slate-900 text-sky-300 placeholder-slate-500 outline-none focus:ring-2 focus:ring-indigo-500 text-lg"
+      />
+
+      <p
+        id="len"
+        class="mt-6 text-xl font-semibold text-emerald-400 break-words"
+      >
+        Result here
+      </p>
+    </div>
+    <script>
+      let inputhtml = document.getElementById("btn1");
+      let lengthhtml = document.getElementById("len");
+
+      inputhtml.addEventListener("keyup", () => {
+        let str = inputhtml.value;
+        let ans = "";
+        for (let i = str.length - 1; i >= 0; i--) {
+          ans += str[i];
+        }
+        lengthhtml.innerText = `${ans}`;
+      });
+    </script>
+  </body>
+</html>

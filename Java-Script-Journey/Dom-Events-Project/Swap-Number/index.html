@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swap Numbers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body
+    class="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 h-screen flex justify-center items-center"
+  >
+    <div
+      class="backdrop-blur-lg bg-white/20 border border-white/30 shadow-2xl rounded-3xl p-10 text-center w-[350px]"
+    >
+      <h1 class="text-3xl font-bold text-yellow-300 mb-8 drop-shadow-lg">
+        Swap Numbers
+      </h1>
+
+      <div class="flex justify-center gap-5 mb-8">
+        <input
+          id="num1"
+          type="number"
+          placeholder="First"
+          class="w-28 p-3 rounded-xl bg-white/30 text-blue-900 placeholder-blue-700 font-semibold outline-none focus:ring-4 focus:ring-pink-400 shadow-md"
+        />
+
+        <input
+          id="num2"
+          type="number"
+          placeholder="Second"
+          class="w-28 p-3 rounded-xl bg-white/30 text-purple-900 placeholder-purple-700 font-semibold outline-none focus:ring-4 focus:ring-indigo-400 shadow-md"
+        />
+      </div>
+
+      <button
+        id="swapbtn"
+        class="px-6 py-2 rounded-xl bg-gradient-to-r from-yellow-400 to-orange-500 text-indigo-900 font-bold shadow-lg hover:scale-110 hover:shadow-yellow-300/60 transition duration-300"
+      >
+        Swap
+      </button>
+    </div>
+    <script>
+      let btn1html = document.getElementById("num1");
+      let btn2html = document.getElementById("num2");
+      let swaphtml = document.getElementById("swapbtn");
+      swaphtml.addEventListener("click", () => {
+        let temp = btn1html.value;
+        btn1html.value = btn2html.value;
+        btn2html.value = temp;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="bg-black">
+        <h2 class="text-center text-yellow-100 font-bold text-4xl p-7">
+            Button Counter
+        </h2>
+        <div class="min-h-[87vh] flex justify-center items-center">
+            <div class="flex gap-5">
+                <div>
+                    <div class="bg-gray-300 flex w-80 h-10 rounded-lg mb-5">
+                        <button class="w-10" id="btn1_dec">-</button>
+                        <h2 class="w-60 flex justify-center items-center bg-white" id="data1">
+                            0
+                        </h2>
+                        <button class="w-10" id="btn1_incr">+</button>
+                    </div>
+                </div>
+                <div>
+                    <h2 id="text_incr" class="text-white font-bold text-2xl">
+                        Increment
+                    </h2>
+                    <h2 id="text_dec" class="text-white font-bold text-2xl">
+                        Decrement
+                    </h2>
+                    <h2 id="text_reset" class="text-yellow-500 font-bold text-2xl cursor-pointer">
+                        RESET
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
