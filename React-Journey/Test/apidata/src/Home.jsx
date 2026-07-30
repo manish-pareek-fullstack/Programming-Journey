@@ -1,11 +1,13 @@
-import React from 'react'
-
+import React from "react";
+import { useGetUserQuery } from "./app/apislice.js";
 const Home = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  const { data,error,isLoading } = useGetUserQuery();
+  console.log(">>>>>>>>>>>>>>>>", data);
+  console.log('error', error)
+  return <div>home
 
-export default Home
+    
+  </div>;
+};
+
+export default Home;

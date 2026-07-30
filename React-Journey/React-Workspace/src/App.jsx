@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./App.css";
 import { BrowserRouter, Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import Home from "./Home";
@@ -22,12 +22,11 @@ import Otp from "./Otp";
 import Prodectdeateil from "./Prodectdeateil";
 import UseTheme from "./UseTheme";
 import Debounce from "./Debounce";
-function App() {
+import { userContext } from "./Contextapi";
+function App(){
   const [cart, setCart] = useState([]);
   const [data, setdata] = useState([]);
   const { toggeluse, themeuse } = UseTheme();
- 
-
   const fatch = async () => {
     try {
       const result = await axios.get("https://dummyjson.com/products");
@@ -36,7 +35,10 @@ function App() {
       console.log(error);
     }
   };
-
+  const himashu = {
+    name: 'himanshu',
+    age: 23,
+}
   useEffect(() => {
     fatch();
   }, []);

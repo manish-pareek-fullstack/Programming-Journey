@@ -1,0 +1,412 @@
+/* ============================================
+   Modern Dashboard CSS — Glassmorphism Theme
+   Pure CSS only — zero JSX/logic changes.
+   Since the component has no classNames, elements
+   are targeted via tags + [style*="..."] attribute
+   selectors that match the existing inline styles.
+   ============================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* ============================================
+   PAGE WRAPPER — targets the outer div that
+   carries the dark/light inline background style
+   ============================================ */
+#root > div,
+[style*="min-height: 100vh"] {
+  font-family: "Poppins", sans-serif !important;
+  background: transparent !important;
+  min-height: 100vh;
+  padding: 40px 24px !important;
+  animation: pageFadeIn 0.6s ease both;
+  position: relative;
+}
+
+#root > div::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 45%, #f093fb 100%);
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   HEADING
+   ============================================ */
+h1 {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin: 0 0 28px;
+  color: #fff;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  animation: pageFadeIn 0.7s ease both;
+}
+
+/* ============================================
+   TOP CONTROLS (dark mode toggle, search, sort)
+   ============================================ */
+body > div > button:first-of-type,
+h1 + button {
+  display: inline-block;
+  margin: 0 auto 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+h1 + button:hover {
+  background: rgba(255, 255, 255, 0.32);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+h1 + button:active {
+  transform: translateY(0) scale(0.96);
+}
+
+/* Search input (placeholder attribute selector) */
+input[placeholder="Search user..."] {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  margin: 16px auto;
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input[placeholder="Search user..."]::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+input[placeholder="Search user..."]:focus {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+  transform: scale(1.01);
+}
+
+/* Sort buttons (A-Z / Z-A) — sit right after the search input */
+input[placeholder="Search user..."] ~ button {
+  padding: 8px 18px;
+  margin: 0 6px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+input[placeholder="Search user..."] ~ button:hover {
+  background: #fff;
+  color: #764ba2;
+  transform: translateY(-2px);
+}
+
+/* hr dividers */
+hr {
+  border: none;
+  height: 1px;
+  max-width: 480px;
+  margin: 28px auto;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+}
+
+/* ============================================
+   FORM CARD
+   ============================================ */
+form {
+  max-width: 460px;
+  margin: 0 auto 32px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  animation: pageFadeIn 0.8s ease both;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+form:hover {
+  box-shadow: 0 12px 40px rgba(31, 38, 135, 0.35);
+}
+
+form input {
+  padding: 13px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.85);
+  color: #222;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+form input::placeholder {
+  color: #888;
+}
+
+form input:focus {
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.35), 0 0 0 1px #764ba2 inset;
+  transform: translateY(-1px);
+}
+
+form button[type="submit"] {
+  margin-top: 6px;
+  padding: 13px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 18px rgba(102, 126, 234, 0.4);
+}
+
+form button[type="submit"]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(102, 126, 234, 0.55);
+  filter: brightness(1.08);
+}
+
+form button[type="submit"]:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow: 0 4px 10px rgba(102, 126, 234, 0.4);
+}
+
+/* ============================================
+   "No Users Found" empty state
+   ============================================ */
+form ~ p {
+  text-align: center;
+  color: #fff;
+  font-size: 1.05rem;
+  opacity: 0.85;
+  margin-top: 40px;
+  animation: pageFadeIn 0.6s ease both;
+}
+
+/* ============================================
+   USER CARDS — matched via their inline style
+   "border: 1px solid gray" fingerprint
+   ============================================ */
+div[style*="1px solid gray"] {
+  display: inline-flex !important;
+  flex-direction: column;
+  width: 260px;
+  vertical-align: top;
+  margin: 12px !important;
+  padding: 20px !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 18px !important;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  animation: cardPop 0.5s ease both;
+}
+
+@keyframes cardPop {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+div[style*="1px solid gray"]:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.22);
+}
+
+div[style*="1px solid gray"] p {
+  margin: 0 0 8px;
+  color: #fff;
+  word-break: break-word;
+}
+
+div[style*="1px solid gray"] p:first-of-type {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+div[style*="1px solid gray"] p:nth-of-type(2) {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* Card action buttons: Delete / Edit / Patch */
+div[style*="1px solid gray"] button {
+  margin: 4px 4px 0 0;
+  padding: 7px 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.25s ease;
+}
+
+div[style*="1px solid gray"] button:nth-of-type(1) {
+  background: linear-gradient(135deg, #ff5f6d, #c81d25);
+}
+
+div[style*="1px solid gray"] button:nth-of-type(2) {
+  background: linear-gradient(135deg, #36d1dc, #1e6fa8);
+}
+
+div[style*="1px solid gray"] button:nth-of-type(3) {
+  background: linear-gradient(135deg, #f7971e, #c96b0f);
+}
+
+div[style*="1px solid gray"] button:hover {
+  filter: brightness(1.12);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+div[style*="1px solid gray"] button:active {
+  transform: translateY(0) scale(0.94);
+}
+
+/* Container for the card list — center them nicely */
+form ~ div[style*="1px solid gray"]:first-of-type {
+  margin-left: auto !important;
+}
+
+/* Wrap the whole list centered using flex-esque trick via text-align on parent */
+div[style*="1px solid gray"] {
+  text-align: left;
+}
+
+/* ============================================
+   OPTIONAL LOADING SPINNER
+   (not wired to JS state — available if you add
+   a `loading` class to any element later)
+   ============================================ */
+.loader {
+  width: 42px;
+  height: 42px;
+  margin: 60px auto;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  form {
+    margin-left: 16px;
+    margin-right: 16px;
+    padding: 22px;
+  }
+
+  div[style*="1px solid gray"] {
+    width: 100%;
+    display: block !important;
+  }
+}
+
+@media (max-width: 480px) {
+  input[placeholder="Search user..."] {
+    max-width: 90%;
+  }
+
+  h1 + button {
+    display: block;
+    margin: 0 auto 16px;
+  }
+}

@@ -52,6 +52,7 @@ const Login = () => {
           value={form.name}
           onChange={(e) => setform({ ...form, name: e.target.value })}
         />
+        <img />
         <input
           type="email"
           placeholder="enter the enail"

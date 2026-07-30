@@ -1,19 +1,18 @@
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
-import { increment, decrement } from "./slice/slicecounter";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
-
+import { increment,decrement } from "./slice/slicecounter";
 function Home() {
-  const count = useSelector((state) => state.counter.count);
-  const dispatch = useDispatch();
-
+  
+  const couter = useSelector((state) => state.couter);
+  console.log(couter)
   const [data, setdata] = useState([]);
   const [loading, setloading] = useState(false);
   const [error, seterror] = useState("");
 
   let input = useRef();
-
+  const dispatch = useDispatch();
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -65,11 +64,10 @@ function Home() {
           <button onClick={handellocation}>location</button>
         </div>
       </h1>
-      <div style={{ textAlign: "center" }}>
-        <h1>Count: {count}</h1>
-        <button onClick={() => dispatch(increment())}>+</button>
-        <button onClick={() => dispatch(decrement())}>-</button>
-      </div>
+      <div>
+        <button onClick={()=>dispatch(increment())}>incremet</button>
+        <button onClick={()=>dispatch(decrement())}>decremnt</button>
+     </div>
       <input type="text" placeholder="enter the name" ref={input} />
       <input type="button" value="click" onClick={handelclick} />
       {loading && <h1>Loading...</h1>}
