@@ -1,0 +1,134 @@
+/* ============================================================
+   PAGE LOADER — Loader.css
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&display=swap');
+
+.page-loader {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f0f4ff;
+  z-index: 9000;
+  gap: 1.5rem;
+  animation: loaderFadeIn 0.2s ease;
+}
+
+.page-loader.fade-out {
+  animation: loaderFadeOut 0.4s ease forwards;
+}
+
+@keyframes loaderFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes loaderFadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; pointer-events: none; }
+}
+
+/* ── Logo mark ─────────────────────────────────────────────── */
+.loader-logo {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #1a56db 0%, #6366f1 100%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(26, 86, 219, 0.35);
+  animation: logoPulse 2s ease-in-out infinite;
+}
+
+.loader-logo svg {
+  width: 26px;
+  height: 26px;
+  stroke: #ffffff;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@keyframes logoPulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 8px 24px rgba(26, 86, 219, 0.35); }
+  50%       { transform: scale(1.04); box-shadow: 0 12px 32px rgba(26, 86, 219, 0.48); }
+}
+
+/* ── Dot track ─────────────────────────────────────────────── */
+.loader-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.loader-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #dde6f8;
+  animation: dotBounce 1.2s ease-in-out infinite;
+}
+
+.loader-dot:nth-child(1) { animation-delay: 0s; }
+.loader-dot:nth-child(2) { animation-delay: 0.15s; }
+.loader-dot:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes dotBounce {
+  0%, 80%, 100% {
+    transform: scale(1);
+    background: #dde6f8;
+  }
+  40% {
+    transform: scale(1.4);
+    background: #1a56db;
+  }
+}
+
+/* ── Label ─────────────────────────────────────────────────── */
+.loader-label {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #94a3b8;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  animation: textPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes textPulse {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 1; }
+}
+
+/* ── Inline / section loader (smaller) ───────────────────────
+   Use className="section-loader" for table/content areas
+   ─────────────────────────────────────────────────────────── */
+.section-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 4rem 2rem;
+  width: 100%;
+}
+
+.section-loader .loader-dots .loader-dot {
+  width: 7px;
+  height: 7px;
+}
+
+.section-loader .loader-label {
+  font-size: 0.75rem;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .loader-logo { width: 48px; height: 48px; border-radius: 14px; }
+  .loader-logo svg { width: 22px; height: 22px; }
+}
