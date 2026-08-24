@@ -1,0 +1,117 @@
+/* ============================================================
+   tailwind.css — scoped Tailwind entry point
+   Only used by the Login/Signup redesign (src/auth/*).
+   Preflight (Tailwind's base reset) is intentionally NOT
+   imported so the rest of the app — which relies on the
+   handwritten rules in index.css — is completely unaffected.
+   ============================================================ */
+
+@import "tailwindcss/theme.css";
+@import "tailwindcss/utilities.css";
+
+@theme {
+  /* Employee Management System — auth palette (purple/white) */
+  --color-ems-bg: #f7f5fc;
+  --color-ems-surface: #ffffff;
+  --color-ems-primary: #6d4fe0;
+  --color-ems-primary-dark: #4a2fb8;
+  --color-ems-primary-soft: #b9abf5;
+  --color-ems-accent: #f5a524;
+  --color-ems-ink: #1c1730;
+  --color-ems-muted: #6e6580;
+  --color-ems-border: #e7e2f6;
+
+  /* Reuse the fonts already loaded in index.css — no extra network calls */
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-body: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ── Ambient motion for the left-side visual panel ─────────── */
+
+@keyframes ems-float {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(6px, -16px);
+  }
+}
+
+@keyframes ems-float-alt {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-8px, 14px);
+  }
+}
+
+@keyframes ems-blob {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(24px, -28px) scale(1.08);
+  }
+  66% {
+    transform: translate(-18px, 18px) scale(0.94);
+  }
+}
+
+@keyframes ems-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ems-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-ems-float {
+  animation: ems-float 6s ease-in-out infinite;
+}
+.animate-ems-float-alt {
+  animation: ems-float-alt 7.5s ease-in-out infinite;
+}
+.animate-ems-float-slow {
+  animation: ems-float 9s ease-in-out infinite;
+}
+.animate-ems-blob {
+  animation: ems-blob 16s ease-in-out infinite;
+}
+.animate-ems-blob-delay {
+  animation: ems-blob 20s ease-in-out infinite;
+  animation-delay: -7s;
+}
+.animate-ems-fade-in-up {
+  animation: ems-fade-in-up 0.6s ease-out both;
+}
+.animate-ems-fade-in {
+  animation: ems-fade-in 0.5s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-ems-float,
+  .animate-ems-float-alt,
+  .animate-ems-float-slow,
+  .animate-ems-blob,
+  .animate-ems-blob-delay,
+  .animate-ems-fade-in-up,
+  .animate-ems-fade-in {
+    animation: none !important;
+  }
+}
