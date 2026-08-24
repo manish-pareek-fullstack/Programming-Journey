@@ -1,0 +1,37 @@
+.qualification{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#0f2027;
+color:white;
+padding:60px 20px;
+}
+
+.qualification-container{
+max-width:800px;
+text-align:center;
+}
+
+.qualification h1{
+font-size:40px;
+margin-bottom:40px;
+color:#00ffff;
+}
+
+.qualification-card{
+background:#111;
+padding:25px;
+border-radius:10px;
+margin-bottom:20px;
+}
+
+.qualification-card h3{
+color:#00ffff;
+margin-bottom:5px;
+}
+
+.qualification-card span{
+font-size:14px;
+color:#bbb;
+}

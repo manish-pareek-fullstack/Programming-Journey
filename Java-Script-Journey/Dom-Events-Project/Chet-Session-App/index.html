@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Message Console</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="card">
+
+      <!-- Header -->
+      <div class="card-header">
+        <h1>Message Console</h1>
+        <p class="subtitle">Live Chat &nbsp;·&nbsp; v1.0</p>
+      </div>
+
+      <!-- JS injects username here via usernamehtml.innerHTML -->
+      <div id="username"></div>
+
+      <!-- Status Buttons -->
+      <div class="status-row">
+        <button id="goonline"><span>🟢</span> Online</button>
+        <button id="gooofline"><span>🔴</span> Offline</button>
+      </div>
+
+      <!-- Log / Chat Box — JS appends plain text + <br> here -->
+      <div class="chat-box" id="contextmsg"></div>
+
+      <!-- Input -->
+      <div class="input-row">
+        <input
+          type="text"
+          id="msgcontextmenu"
+          name="content"
+          placeholder="Type a message…"
+          autocomplete="off"
+        />
+        <button id="sendbtn">Send ➤</button>
+      </div>
+
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

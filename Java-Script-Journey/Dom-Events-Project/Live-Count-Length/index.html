@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Live Length Counter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body
+    class="bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-800 h-screen flex items-center justify-center"
+  >
+    <div
+      class="bg-white/10 backdrop-blur-xl border border-indigo-400/30 shadow-[0_0_40px_rgba(99,102,241,0.5)] rounded-3xl p-10 text-center w-[380px]"
+    >
+      <h1 class="text-3xl font-bold text-cyan-300 mb-6 tracking-wide">
+        Live Counter
+      </h1>
+
+      <input
+        id="btn1"
+        type="text"
+        placeholder="Type here..."
+        class="w-full p-3 rounded-xl bg-indigo-500/20 text-pink-300 placeholder-pink-200 outline-none focus:ring-4 focus:ring-cyan-400 shadow-lg text-lg font-semibold"
+      />
+
+      <p id="len" class="mt-5 text-xl font-bold text-yellow-300 tracking-wide">
+        Length: 0
+      </p>
+    </div>
+
+    <script>
+      let input = document.getElementById("btn1");
+      let lengthText = document.getElementById("len");
+
+      input.addEventListener("input", () => {
+        lengthText.innerText = `Length: ${input.value.length}`;
+      });
+    </script>
+  </body>
+</html>

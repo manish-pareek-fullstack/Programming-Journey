@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  background: #f0f4f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.login-page {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.login-card {
+  background: #ffffff;
+  border: 1px solid #dde3ec;
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 8px 32px rgba(100, 120, 160, 0.08);
+  animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-icon {
+  width: 68px;
+  height: 68px;
+  background: #e8eef8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin: 0 auto 1rem;
+  border: 1.5px solid #c8d5ea;
+  animation: softPulse 3s ease-in-out infinite;
+}
+
+@keyframes softPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(100, 130, 200, 0.15); }
+  50%       { box-shadow: 0 0 0 10px rgba(100, 130, 200, 0.0); }
+}
+
+.login-header h2 {
+  color: #3a4a6b;
+  font-size: 1.7rem;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+.login-header p {
+  color: #8a96b0;
+  font-size: 0.88rem;
+  margin-top: 4px;
+  font-weight: 400;
+}
+
+.field {
+  margin-bottom: 1.1rem;
+}
+
+.field label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #6a7a9b;
+  margin-bottom: 6px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="password"],
+.field input[type="tel"],
+.field input[type="date"],
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 11px 14px;
+  background: #f7f9fc;
+  border: 1.5px solid #dde3ec;
+  border-radius: 10px;
+  color: #3a4a6b;
+  font-size: 0.9rem;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.25s ease;
+  outline: none;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #b0bac8;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: #a0b4d6;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(140, 170, 220, 0.15);
+  transform: translateY(-1px);
+}
+
+.field input.input-err,
+.field select.input-err,
+.field textarea.input-err {
+  border-color: #e8a0a0;
+  background: #fff8f8;
+  animation: shake 0.35s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25%, 75%  { transform: translateX(-5px); }
+  50%       { transform: translateX(5px); }
+}
+
+.errmsg {
+  font-size: 0.73rem;
+  color: #c87070;
+  margin-top: 4px;
+  min-height: 16px;
+  font-weight: 500;
+}
+
+.field select option {
+  background: #fff;
+  color: #3a4a6b;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 85px;
+  line-height: 1.5;
+}
+
+.row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.gender-group {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  padding: 10px 14px;
+  background: #f7f9fc;
+  border: 1.5px solid #dde3ec;
+  border-radius: 10px;
+  transition: all 0.25s;
+}
+
+.gender-group:hover {
+  border-color: #a0b4d6;
+  background: #fff;
+}
+
+.gender-opt {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  color: #5a6a8a;
+  font-size: 0.88rem;
+  font-weight: 400;
+  transition: color 0.2s;
+}
+
+.gender-opt:hover { color: #3a4a6b; }
+
+.gender-opt input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #7a9cc0;
+  cursor: pointer;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 13px;
+  background: #7a9cc0;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  letter-spacing: 0.4px;
+  transition: all 0.25s ease;
+}
+
+.login-btn:hover {
+  background: #6889ad;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(100, 130, 180, 0.2);
+}
+
+.login-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+@media (max-width: 520px) {
+  .login-card { padding: 1.8rem 1.2rem; border-radius: 16px; }
+  .row2       { grid-template-columns: 1fr; gap: 0; }
+  .login-header h2 { font-size: 1.45rem; }
+}
+
+@media (max-width: 360px) {
+  .gender-group { flex-direction: column; gap: 8px; }
+}

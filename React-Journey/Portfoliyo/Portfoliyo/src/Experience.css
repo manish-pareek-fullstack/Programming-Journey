@@ -1,0 +1,53 @@
+.experience{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#0f2027;
+color:white;
+padding:60px 20px;
+}
+
+.exp-container{
+max-width:900px;
+text-align:center;
+}
+
+.experience h1{
+font-size:40px;
+margin-bottom:40px;
+color:#00ffff;
+}
+
+.exp-card{
+background:#1a1a1a;
+padding:30px;
+border-radius:10px;
+text-align:left;
+box-shadow:0 0 10px rgba(0,0,0,0.4);
+}
+
+.exp-card h2{
+color:#00ffff;
+margin-bottom:5px;
+}
+
+.exp-card h3{
+font-size:18px;
+margin-bottom:10px;
+}
+
+.duration{
+font-size:14px;
+color:#bbb;
+margin-bottom:15px;
+}
+
+.exp-card ul{
+margin-left:20px;
+line-height:1.6;
+}
+
+.exp-card li{
+margin-bottom:6px;
+}

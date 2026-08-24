@@ -1,0 +1,79 @@
+/* ================================================================
+   THEME TOGGLE BUTTON — add to bottom of index.css
+   ================================================================ */
+
+.theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.42rem 0.9rem;
+  background: var(--surface-2);
+  color: var(--text-muted);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.theme-toggle-btn svg {
+  flex-shrink: 0;
+  transition: transform var(--transition);
+}
+
+.theme-toggle-btn:hover {
+  background: var(--primary-light);
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.theme-toggle-btn:hover svg {
+  transform: rotate(20deg);
+}
+
+/* ================================================================
+   DARK MODE OVERRIDES — body.dark
+   Add these after theme toggle CSS
+   ================================================================ */
+body.dark {
+  --bg:        #0f172a;
+  --surface:   #1e293b;
+  --surface-2: #1a2540;
+  --border:    #2d3f60;
+  --text:      #f1f5f9;
+  --text-muted: #94a3b8;
+  --text-light: #64748b;
+  --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+body.dark .auth-card,
+body.dark .protected-card {
+  background: #1e293b;
+  border-color: #2d3f60;
+}
+
+body.dark .form-input {
+  background: #1a2540;
+  border-color: #2d3f60;
+  color: #f1f5f9;
+}
+
+body.dark .form-input:focus {
+  background: #1e293b;
+}
+
+body.dark .otp-input {
+  background: #1a2540;
+  border-color: #2d3f60;
+  color: #f1f5f9;
+}
+
+body.dark .navbar,
+body.dark div:has(> a[href="/"]) {
+  background: rgba(30, 41, 59, 0.95);
+}
